@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Ouro do Cerrado Brand Colors */
+    --background: 33 18% 96%;
+    --foreground: 0 0% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 17%;
+
+    /* Gold - Primary brand color */
+    --primary: 30 36% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Terracotta - CTA color */
+    --secondary: 9 49% 38%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 33 18% 94%;
+    --muted-foreground: 0 0% 45%;
+
+    /* Cerrado Green - Natural accent */
+    --accent: 95 13% 38%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 33 18% 88%;
+    --input: 33 18% 88%;
+    --ring: 30 36% 53%;
+
+    --radius: 0.75rem;
+
+    /* Custom gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(30 36% 53%) 0%, hsl(30 36% 43%) 100%);
+    --gradient-hero: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+    
+    /* Shadows */
+    --shadow-luxury: 0 20px 60px -15px hsl(30 36% 53% / 0.3);
+    --shadow-card: 0 4px 24px -6px hsl(0 0% 0% / 0.1);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 0 0% 12%;
+    --foreground: 33 18% 96%;
+
+    --card: 0 0% 15%;
+    --card-foreground: 33 18% 96%;
+
+    --popover: 0 0% 15%;
+    --popover-foreground: 33 18% 96%;
+
+    --primary: 30 36% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 9 49% 38%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 18%;
+    --muted-foreground: 33 18% 65%;
+
+    --accent: 95 13% 38%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 30 36% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-['Poppins',sans-serif];
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+  
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-primary to-amber-600 bg-clip-text text-transparent;
+  }
+
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-2;
+  }
+
+  .shadow-luxury {
+    box-shadow: var(--shadow-luxury);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+}
