@@ -9,7 +9,15 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo & Description */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-primary">Ouro do Cerrado</h3>
+            <img
+              src="../public/Logo_ouro_cerrado.png"
+              alt="Logo Ouro do Cerrado Hotel"
+              className="h-auto w-40"
+            />
+            {/* Use as classes 'className' do Tailwind para ajustar o tamanho.
+    'h-10' = altura (ex: 10 unidades = 40px)
+    'w-auto' = largura automática para manter a proporção
+  */}
             <p className="text-background/80">
               Sua estadia inesquecível em Arinos-MG. Conforto, elegância e hospitalidade.
             </p>

@@ -26,16 +26,24 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-card/95 backdrop-blur-md shadow-card" : "bg-transparent"
+        isScrolled
+          ? "bg-card/95 backdrop-blur-md shadow-card"
+          : "bg-transparent"
       }`}
     >
       <nav className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#inicio" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold text-gradient-gold">
-              Ouro do Cerrado
-            </div>
+            <img
+              src="../public/Logo_ouro_cerrado.png"
+              alt="Logo Ouro do Cerrado Hotel"
+              className="h-auto w-40"
+            />
+            {/* Use as classes 'className' do Tailwind para ajustar o tamanho.
+    'h-10' = altura (ex: 10 unidades = 40px)
+    'w-auto' = largura automática para manter a proporção
+  */}
           </a>
 
           {/* Desktop Navigation */}
