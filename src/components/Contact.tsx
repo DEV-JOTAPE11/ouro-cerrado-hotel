@@ -178,8 +178,7 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold text-lg mb-1">Endereço</h3>
                   <p className="text-muted-foreground">
-                    Av Garibaldina Fernandes Valadares<br />
-                    Primavera 1, Arinos - MG, 38680-000
+                    R. Juscelino Kubitscheck, 1060 - Planalto, Buritis - MG, 38660-000
                   </p>
                 </div>
               </div>
@@ -227,7 +226,7 @@ const Contact = () => {
             {/* Map */}
             <div className="rounded-xl overflow-hidden shadow-card h-[300px]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3837.5!2d-46.1!3d-15.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTXCsDU0JzAwLjAiUyA0NsKwMDYnMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3842.279505541775!2d-46.42932612411607!3d-15.630097618932535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9356b305f48a343f%3A0xe3dcce9676d90e9a!2sHotel%20Ouro%20do%20Cerrado%20Buritis!5e0!3m2!1spt-BR!2sbr!4v1763047220356!5m2!1spt-BR!2sbr"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

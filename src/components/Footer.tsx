@@ -92,8 +92,8 @@ const Footer = () => {
               <li className="flex gap-3 text-background/80">
                 <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-sm">
-                  Av Garibaldina Fernandes Valadares<br />
-                  Primavera 1, Arinos - MG
+                  R. Juscelino Kubitscheck,<br /> 1060 - Planalto, Buritis - MG, 38660-000
+                  
                 </span>
               </li>
               <li className="flex gap-3 text-background/80">
