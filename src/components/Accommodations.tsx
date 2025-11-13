@@ -1,40 +1,107 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Users, Bed, Maximize } from "lucide-react";
-import heroSuite from "@/assets/hero-suite.jpg";
-import roomStandard from "@/assets/room-standard.jpg";
-import roomFamily from "@/assets/room-family.jpg";
+import heroSuite from "@/assets/Super-luxo-ar-hidro.jpg";
+import heroSuiteHover from "@/assets/banheiro-superluxo.jpg";
+import roomStandard from "@/assets/Suite-familia-com-ar.jpg";
+import roomFamily from "@/assets/luxo-executivo.jpg";
+import masterTriplo from "@/assets/master-triplo.jpg";
+import masterExecu from "@/assets/master-executivo-ar-frigo.jpg";
+import masterAR from "@/assets/master-ar.jpg";  
+import masterexe from "@/assets/master-executivo.jpg";  
 
 const accommodations = [
   {
     id: 1,
-    name: "Suíte Premium",
+    name: "Suíte Super Luxo",
     image: heroSuite,
+    imageHover: heroSuiteHover,
     guests: "2 pessoas",
     beds: "1 cama king size",
-    size: "45m²",
-    price: "R$ 450",
-    features: ["Vista panorâmica", "Banheira de hidromassagem", "Varanda privativa"],
+    size: "48²",
+    price: {
+      individual: 480,
+      duplo: 480,
+    },
+    features: ["Ar-Condicionado","Frigobar", "Banheira de hidromassagem"],
   },
   {
     id: 2,
-    name: "Quarto Standard",
+    name: "Suite família com ar",
     image: roomStandard,
-    guests: "2 pessoas",
-    beds: "1 cama queen size",
-    size: "30m²",
-    price: "R$ 280",
+    guests: "4 pessoas",
+    beds: "1 cama de casal e 2 camas de solteiro",
+    price: {
+      duplo: 260, // (Ex: O preço base é para casal)
+      triplo: 360,
+      quadruplo: 460,
+    },
     features: ["Wi-Fi gratuito", "TV a cabo", "Ar-condicionado"],
   },
   {
     id: 3,
-    name: "Quarto Família",
+    name: "Luxo Executivo",
     image: roomFamily,
-    guests: "4 pessoas",
-    beds: "2 camas de casal",
-    size: "50m²",
-    price: "R$ 520",
-    features: ["Espaço amplo", "Área de estar", "Ideal para famílias"],
+    guests: "2 pessoas",
+    beds: "1 cama de casal",
+    price: {
+      individual: 200, // (Ex: O preço base é para casal)
+      duplo: 260,
+    },
+    features: ["Frigobar", "Ar-condicionado", "Serviço de quarto"],
+  },
+
+  {
+    id: 4,
+    name: "Master Triplo",
+    image: masterTriplo,
+    guests: "3 pessoas",
+    beds: "1 cama de casal e uma de solteiro",
+    price: {
+      individual: 180, // (Ex: O preço base é para casal)
+      duplo: 230.00,
+      triplo: 310.00,
+    },
+    features: ["Ideal para familia", "Tv a cabo", "Ar-condicionado"],
+  },
+
+  {
+    id: 5,
+    name: "Master Executivo com ar e frigobar",
+    image: masterExecu,
+    guests: "2 pessoas",
+    beds: "1 cama de casal",
+    price: {
+      individual: 180, // (Ex: O preço base é para casal)
+      duplo: 230.00,
+    },
+    features: ["Frigobar", "Ar-condicionado"],
+  },
+
+   {
+    id: 6,
+    name: "Master com ar",
+    image: masterAR,
+    guests: "2 pessoas",
+    beds: "1 cama de casal",
+    price: {
+      individual: 160, // (Ex: O preço base é para casal)
+      duplo: 210.00,
+    },
+    features: [ "Ar-condicionado", "serviço de quarto",],
+  },
+
+  {
+    id: 7,
+    name: "Master executivo",
+    image: masterexe,
+    guests: "2 pessoas",
+    beds: "1 cama de casal",
+    price: {
+      individual: 160, // (Ex: O preço base é para casal)
+      duplo: 210.00,
+    },
+    features: [ "Com acessibilidade", "Ar-condicionado", "Tv a cabo"],
   },
 ];
 
@@ -56,7 +123,7 @@ const Accommodations = () => {
         </div>
 
         {/* Accommodation Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {accommodations.map((room, index) => (
             <Card 
               key={room.id} 
@@ -64,14 +131,26 @@ const Accommodations = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Image */}
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-80 overflow-hidden">
                 <img
                   src={room.image}
                   alt={room.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
+
+                {/* IMAGEM HOVER (Fica por cima) */}
+                    {/* (Só renderiza se 'room.imageHover' existir) */}
+                    {room.imageHover && (
+                      <img
+                        src={room.imageHover}
+                        alt={room.name}
+                        // 👇 Começa invisível (opacity-0) e aparece no hover (group-hover:opacity-100)
+                        className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+                      />
+                    )}
+                    
                 <div className="absolute top-4 right-4 bg-secondary text-secondary-foreground px-4 py-2 rounded-full font-semibold">
-                  {room.price}/noite
+                  A partir de R$ {room.price.individual || room.price.duplo || '...'}
                 </div>
               </div>
 
@@ -88,10 +167,12 @@ const Accommodations = () => {
                     <Bed className="h-4 w-4 text-primary" />
                     <span>{room.beds}</span>
                   </div>
+                  {room.size && (
                   <div className="flex items-center gap-2">
                     <Maximize className="h-4 w-4 text-primary" />
                     <span>{room.size}</span>
                   </div>
+                  )}
                 </div>
 
                 {/* Features */}
@@ -103,6 +184,40 @@ const Accommodations = () => {
                     </li>
                   ))}
                 </ul>
+
+                  {/* 👇 NOVO BLOCO DE PREÇOS DETALHADOS 👇 */}
+                <div className="my-4 p-4 bg-gray-100 rounded-lg">
+                  <h4 className="font-semibold text-lg mb-2 text-gray-900">Valores da Diária</h4>
+                  <ul className="space-y-1 text-sm text-gray-800">
+                    
+                    {/* O '&&' checa se o preço existe antes de mostrar a linha */}
+                    {room.price.individual && (
+                      <li className="flex justify-between">
+                        <span>Individual:</span>
+                        <strong>R$ {room.price.individual}</strong>
+                      </li>
+                    )}
+                    {room.price.duplo && (
+                      <li className="flex justify-between">
+                        <span>Casal:</span>
+                        <strong>R$ {room.price.duplo}</strong>
+                      </li>
+                    )}
+                    {room.price.triplo && (
+                      <li className="flex justify-between">
+                        <span>Triplo:</span>
+                        <strong>R$ {room.price.triplo}</strong>
+                      </li>
+                    )}
+                    {room.price.quadruplo && (
+                      <li className="flex justify-between">
+                        <span>Quádruplo:</span>
+                        <strong>R$ {room.price.quadruplo}</strong>
+                      </li>
+                    )}
+                  </ul>
+                </div>
+                {/* 👆 FIM DO NOVO BLOCO 👆 */}
 
                 {/* CTA Button */}
                 <Button variant="secondary" className="w-full" asChild>

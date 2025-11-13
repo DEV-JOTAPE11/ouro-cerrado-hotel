@@ -1,4 +1,4 @@
-import hotelExterior from "@/assets/hotel-exterior.jpg";
+import hotelExterior from "@/assets/About-us.jpg";
 
 const About = () => {
   return (
@@ -34,20 +34,16 @@ const About = () => {
             </h2>
             
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Localizado no coração de Arinos-MG, o Ouro do Cerrado Hotel oferece 
-              uma experiência única de hospedagem, onde conforto, elegância e 
-              hospitalidade se encontram.
+              Situado no vibrante centro de Buritis-MG, o Ouro do Cerrado Hotel redefine a arte de hospedar. Convidamos você a desfrutar de uma experiência única, onde o conforto contemporâneo, a elegância em cada detalhe e uma hospitalidade calorosa se fundem perfeitamente.
             </p>
             
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Nossa missão é proporcionar momentos inesquecíveis aos nossos hóspedes, 
-              com acomodações modernas, serviços de excelência e um atendimento 
-              personalizado que faz toda a diferença.
+              Nossa missão é criar estadias memoráveis. Com acomodações modernas, projetadas para o seu máximo descanso, e uma gama de serviços de excelência, nossa equipe se dedica a um atendimento personalizado que realmente faz a diferença. Descubra o padrão Ouro do Cerrado e sinta-se em casa.
             </p>
 
             <div className="grid grid-cols-3 gap-6 pt-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary">10+</div>
+                <div className="text-3xl font-bold text-primary">4+</div>
                 <div className="text-sm text-muted-foreground mt-1">Anos de Experiência</div>
               </div>
               <div className="text-center">
