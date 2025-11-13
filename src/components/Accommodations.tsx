@@ -1,8 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Users, Bed, Maximize } from "lucide-react";
-import heroSuite from "@/assets/Super-luxo-ar-hidro.jpg";
-import heroSuiteHover from "@/assets/banheiro-superluxo.jpg";
+import heroSuite from "@/assets/suiteluxuosa.webp";
+import heroSuiteHover from "@/assets/Banheirahidro.webp";
 import roomStandard from "@/assets/Suite-familia-com-ar.jpg";
 import roomFamily from "@/assets/luxo-executivo.jpg";
 import masterTriplo from "@/assets/master-triplo.jpg";

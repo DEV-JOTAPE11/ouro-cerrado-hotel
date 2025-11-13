@@ -10,6 +10,10 @@ const Contact = () => {
     name: "",
     email: "",
     phone: "",
+    address: "", // Já está aqui
+    module: "",  // Já está aqui (para modalidade)
+    dataCheckin: "", // Mudei de 'data' para ser mais específico
+    dataCheckout: "", // Mudei de 'data' para ser mais específico
     message: "",
   });
 
@@ -17,14 +21,26 @@ const Contact = () => {
     e.preventDefault();
     
     // Construct WhatsApp message
-    const message = `Olá! Gostaria de fazer uma reserva.\n\nNome: ${formData.name}\nEmail: ${formData.email}\nTelefone: ${formData.phone}\nMensagem: ${formData.message}`;
+    const message = `Olá! Gostaria de fazer uma reserva.\n\nNome: ${formData.name}\nEmail: ${formData.email}\nTelefone: ${formData.phone} Endereço: ${formData.address || 'Não informado'}
+    \nQuarto: ${formData.module}
+    \nCheck-in: ${formData.dataCheckin}
+    \nCheck-out: ${formData.dataCheckout}\nMensagem: ${formData.message}`;
     const whatsappUrl = `https://wa.me/5538999999999?text=${encodeURIComponent(message)}`;
     
     window.open(whatsappUrl, "_blank");
     
     toast.success("Redirecionando para WhatsApp...");
     
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    setFormData({ 
+      name: "", 
+      email: "", 
+      phone: "", 
+      address: "", 
+      module: "", 
+      dataCheckin: "", 
+      dataCheckout: "", 
+      message: "" 
+    });
   };
 
   return (
@@ -76,6 +92,63 @@ const Contact = () => {
                   className="h-12"
                 />
               </div>
+
+              <div>
+               <Input
+                  placeholder="Seu Endereço (opcional)"
+                  value={formData.address}
+                  onChange={(e) => setFormData({ ...formData,         address: e.target.value })}
+                 className="h-12"
+                />
+            </div>
+
+                  {/* 👇 CAMPO MODALIDADE (NOVO, como <select>) 👇 */}
+                  <div>
+                    {/* Eu usei um <select> aqui para melhor experiência.
+                      Adicionei classes do Tailwind para se parecer com seu <Input>.
+                    */}
+                    <select
+                      value={formData.module}
+                      onChange={(e) => setFormData({ ...formData, module: e.target.value })}
+                      required
+                      className="w-full h-12 rounded-md border border-input bg-transparent px-3 py-2 text-sm text-muted-foreground"
+                    >
+                      <option value="" disabled>Selecione o tipo de quarto</option>
+                      {/* Você deve listar os quartos que você criou no array accommodations */}
+                      <option value="Suíte Super Luxo">Suíte Super Luxo</option>
+                      <option value="Suite família com ar">Suite família com ar</option>
+                      <option value="Luxo executivo com ar e frigobar">Luxo executivo com ar e frigobar</option>
+                      <option value="Master triplo com ar">Master triplo com ar</option>
+                      <option value="Master triplo com ar">Master Executivo com ar e frigobar</option>
+                      <option value="Master com ar">Master com ar</option>
+                      <option value="Master executivo">Master executivo</option>
+                    </select>
+                  </div>
+
+                  {/* 👇 CAMPOS DE DATA (NOVOS) 👇 */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-sm text-muted-foreground ml-1">Check-in</label>
+                      <Input
+                        type="date"
+                        value={formData.dataCheckin}
+                        onChange={(e) => setFormData({ ...formData, dataCheckin: e.target.value })}
+                        required
+                        className="h-12"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-sm text-muted-foreground ml-1">Check-out</label>
+                      <Input
+                        type="date"
+                        value={formData.dataCheckout}
+                        onChange={(e) => setFormData({ ...formData, dataCheckout: e.target.value })}
+                        required
+                        className="h-12"
+                      />
+                    </div>
+                  </div>
+
               <div>
                 <Textarea
                   placeholder="Sua mensagem (datas desejadas, número de hóspedes, etc.)"

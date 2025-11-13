@@ -1,19 +1,21 @@
-import heroSuite from "@/assets/hero-suite.jpg";
-import hotelExterior from "@/assets/hotel-exterior.jpg";
-import breakfast from "@/assets/breakfast.jpg";
-import roomStandard from "@/assets/room-standard.jpg";
-import roomFamily from "@/assets/room-family.jpg";
-import lobbyChandelier from "@/assets/lobby-chandelier.png";
+import heroSuite from "@/assets/fachadaprincipal.webp";
+import hotelExterior from "@/assets/fachadaouro.webp";
+import breakfast from "@/assets/cafe-mmanha-frutas.jpg";
+import roomStandard from "@/assets/cafe-breakfast.jpg";
+import roomFamily from "@/assets/arealazer.webp";
+import lobbyChandelier from "@/assets/suiteluxuosa.webp";
 import bathroomLuxury from "@/assets/bathroom-luxury.png";
+import salaTV from "@/assets/sala-de-tv.webp";
 
 const galleryImages = [
-  { id: 1, src: heroSuite, alt: "Suíte Premium com vista panorâmica" },
-  { id: 2, src: hotelExterior, alt: "Fachada do hotel ao entardecer" },
+  { id: 1, src: heroSuite, alt: "Entrada do hotel" },
+  { id: 2, src: hotelExterior, alt: "Fachada do hotel" },
   { id: 3, src: breakfast, alt: "Café da manhã completo" },
-  { id: 4, src: lobbyChandelier, alt: "Lobby com lustre de cristal" },
+  { id: 4, src: lobbyChandelier, alt: "Suíte de luxo com ar e hidromassegem" },
   { id: 5, src: bathroomLuxury, alt: "Banheiro luxuoso" },
-  { id: 6, src: roomStandard, alt: "Quarto Standard confortável" },
-  { id: 7, src: roomFamily, alt: "Quarto Família espaçoso" },
+  { id: 6, src: roomStandard, alt: "Café da manhã" },
+  { id: 7, src: roomFamily, alt: "Área de lazer" },
+  { id: 8, src: salaTV, alt: "Sala de TV" },
 ];
 
 const Gallery = () => {

@@ -1,4 +1,4 @@
-import hotelExterior from "@/assets/About-us.jpg";
+import hotelExterior from "@/assets/Fachacerrado.webp";
 
 const About = () => {
   return (
