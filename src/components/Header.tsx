@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoDoHotel from '@/assets/Logo_ouro_cerrado.png';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,7 +37,7 @@ const Header = () => {
           {/* Logo */}
           <a href="#inicio" className="flex items-center space-x-2">
             <img
-              src="../public/Logo_ouro_cerrado.png"
+              src={logoDoHotel}
               alt="Logo Ouro do Cerrado Hotel"
               className="h-auto w-40"
             />
