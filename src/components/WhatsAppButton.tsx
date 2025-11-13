@@ -5,7 +5,7 @@ const WhatsAppButton = () => {
   const message = "Olá! Gostaria de fazer uma reserva no Ouro do Cerrado Hotel.";
 
   const handleClick = () => {
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   };
 

@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import logoDoHotel from '@/assets/Logo_ouro_cerrado.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,7 +11,7 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="space-y-4">
             <img
-              src="../public/Logo_ouro_cerrado.png"
+               src={logoDoHotel}
               alt="Logo Ouro do Cerrado Hotel"
               className="h-auto w-40"
             />
