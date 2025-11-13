@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-suite.jpg";
+import heroImage from "@/assets/Nova-imagem--fundo.jpg";
 
 const Hero = () => {
   return (
@@ -16,16 +16,16 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container-custom text-center text-white">
+      <div className="relative z-10 container-custom text-center">
         <div className="max-w-4xl mx-auto space-y-6 animate-fade-in-up">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-[#fff]">
             Ouro do Cerrado Hotel
           </h1>
           <p className="text-xl md:text-2xl lg:text-3xl font-light text-white/90">
             Sua estadia inesquecível começa aqui
           </p>
           <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
-            Uma experiência única em hospedagem no coração de Arinos-MG
+            Uma experiência única em hospedagem no coração de Buritis-MG
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
