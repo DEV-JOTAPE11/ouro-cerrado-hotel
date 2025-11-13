@@ -1,7 +1,7 @@
 import { MessageCircle } from "lucide-react";
 
 const WhatsAppButton = () => {
-  const phoneNumber = "5538999999999";
+  const phoneNumber = "5538999248203";
   const message = "Olá! Gostaria de fazer uma reserva no Ouro do Cerrado Hotel.";
 
   const handleClick = () => {

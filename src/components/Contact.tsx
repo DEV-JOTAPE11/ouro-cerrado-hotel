@@ -13,19 +13,27 @@ const Contact = () => {
     address: "", // Já está aqui
     module: "",  // Já está aqui (para modalidade)
     dataCheckin: "", // Mudei de 'data' para ser mais específico
-    dataCheckout: "", // Mudei de 'data' para ser mais específico
+    dataCheckout: "",
+    occupancy: "", // Mudei de 'data' para ser mais específico
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = () => {
+    
     
     // Construct WhatsApp message
-    const message = `Olá! Gostaria de fazer uma reserva.\n\nNome: ${formData.name}\nEmail: ${formData.email}\nTelefone: ${formData.phone} Endereço: ${formData.address || 'Não informado'}
-    \nQuarto: ${formData.module}
-    \nCheck-in: ${formData.dataCheckin}
-    \nCheck-out: ${formData.dataCheckout}\nMensagem: ${formData.message}`;
-    const whatsappUrl = `https://wa.me/5538999999999?text=${encodeURIComponent(message)}`;
+    const message = `Olá! Gostaria de fazer uma reserva.
+    Nome: ${formData.name}
+    Email: ${formData.email}
+    Telefone: ${formData.phone}
+    Endereço: ${formData.address || 'Não informado'}
+    Quarto: ${formData.module}
+    Ocupação: ${formData.occupancy}
+    Check-in: ${formData.dataCheckin}
+    Check-out: ${formData.dataCheckout}
+
+    Mensagem: ${formData.message}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=5538999248203&text=${encodeURIComponent(message)}`;
     
     window.open(whatsappUrl, "_blank");
     
@@ -39,6 +47,7 @@ const Contact = () => {
       module: "", 
       dataCheckin: "", 
       dataCheckout: "", 
+      occupancy: "",
       message: "" 
     });
   };
@@ -62,7 +71,7 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div className="animate-slide-in">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form  className="space-y-6">
               <div>
                 <Input
                   placeholder="Seu nome"
@@ -125,6 +134,73 @@ const Contact = () => {
                     </select>
                   </div>
 
+
+                  {/* 2. ADICIONADO NOVO CAMPO DE OCUPAÇÃO (RÁDIO) */}
+                <div>
+                  <label className="text-sm text-muted-foreground ml-1">Tipo de Ocupação</label>
+                  <div className="flex flex-wrap items-center gap-x-6 gap-y-2 h-auto md:h-12 py-2">
+                    {/* Opção 1: Individual */}
+                    <div className="flex items-center space-x-2">
+                      <input
+                        type="radio"
+                        id="individual"
+                        name="occupancy" // 'name' igual agrupa os botões
+                        value="Individual"
+                        checked={formData.occupancy === "Individual"}
+                        onChange={(e) => setFormData({ ...formData, occupancy: e.target.value })}
+                        required
+                        className="h-4 w-4"
+                      />
+                      <label htmlFor="individual" className="text-sm">Individual</label>
+                    </div>
+                    
+                    {/* Opção 2: Casal */}
+                    <div className="flex items-center space-x-2">
+                      <input
+                        type="radio"
+                        id="casal"
+                        name="occupancy"
+                        value="Casal"
+                        checked={formData.occupancy === "Casal"}
+                        onChange={(e) => setFormData({ ...formData, occupancy: e.target.value })}
+                        required
+                        className="h-4 w-4"
+                      />
+                      <label htmlFor="casal" className="text-sm">Casal</label>
+                    </div>
+
+                    {/* Opção 3: Triplo */}
+                    <div className="flex items-center space-x-2">
+                      <input
+                        type="radio"
+                        id="triplo"
+                        name="occupancy"
+                        value="Triplo"
+                        checked={formData.occupancy === "Triplo"}
+                        onChange={(e) => setFormData({ ...formData, occupancy: e.target.value })}
+                        required
+                        className="h-4 w-4"
+                      />
+                      <label htmlFor="triplo" className="text-sm">Triplo</label>
+                    </div>
+
+                    {/* Opção 4: Quádruplo */}
+                    <div className="flex items-center space-x-2">
+                      <input
+                        type="radio"
+                        id="quadruplo"
+                        name="occupancy"
+                        value="Quádruplo"
+                        checked={formData.occupancy === "Quádruplo"}
+                        onChange={(e) => setFormData({ ...formData, occupancy: e.target.value })}
+                        required
+                        className="h-4 w-4"
+                      />
+                      <label htmlFor="quadruplo" className="text-sm">Quádruplo</label>
+                    </div>
+                  </div>
+                </div>
+
                   {/* 👇 CAMPOS DE DATA (NOVOS) 👇 */}
                   <div className="grid grid-cols-2 gap-4">
                     <div>
@@ -159,7 +235,7 @@ const Contact = () => {
                   className="resize-none"
                 />
               </div>
-              <Button type="submit" variant="secondary" size="lg" className="w-full">
+              <Button type="button" onClick={handleSubmit} variant="secondary" size="lg" className="w-full">
                 Enviar Mensagem via WhatsApp
               </Button>
             </form>
@@ -191,21 +267,11 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg mb-1">Telefone</h3>
-                  <p className="text-muted-foreground">(38) 99999-9999</p>
+                  <p className="text-muted-foreground">(38) 99924-8203</p>
                 </div>
               </div>
 
-              <div className="flex gap-4">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <Mail className="h-6 w-6 text-primary" />
-                  </div>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-1">E-mail</h3>
-                  <p className="text-muted-foreground">contato@ourodocerrado.com.br</p>
-                </div>
-              </div>
+            
 
               <div className="flex gap-4">
                 <div className="flex-shrink-0">
