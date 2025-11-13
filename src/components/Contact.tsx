@@ -22,7 +22,7 @@ const Contact = () => {
     
     
     // Construct WhatsApp message
-    const fullmessage = `Olá! Gostaria de fazer uma reserva.
+    const message = `Olá! Gostaria de fazer uma reserva.
     Nome: ${formData.name}
     Email: ${formData.email}
     Telefone: ${formData.phone}
@@ -33,35 +33,11 @@ const Contact = () => {
     Check-out: ${formData.dataCheckout}
 
     Mensagem: ${formData.message}`;
-
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-    if (!isMobile) {
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=5538999248203&text=${encodeURIComponent(fullmessage)}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=5538999248203&text=${encodeURIComponent(message)}`;
     
     window.open(whatsappUrl, "_blank");
     
     toast.success("Redirecionando para WhatsApp...");
-    } else {
-      // --- LÓGICA PARA COMPUTADOR (Usa "Copiar e Colar") ---
-      // Esta é a única forma de contornar o bug do app do Windows
-      
-      const shortMessage = "Olá! Gostaria de fazer uma reserva.";
-      const whatsappUrl = `https://api.whatsapp.com/send?phone=5538999248203&text=${encodeURIComponent(shortMessage)}`;
-
-      // Copia a mensagem completa para o clipboard (Ctrl+C)
-      navigator.clipboard.writeText(fullmessage)
-        .then(() => {
-          toast.success("Mensagem copiada! Cole no WhatsApp (Ctrl+V).");
-        })
-        .catch(err => {
-          toast.error("Erro ao copiar mensagem.");
-          console.error('Falha ao copiar: ', err);
-        });
-      
-      // Abre o WhatsApp (app ou web) com a mensagem curta
-      window.open(whatsappUrl, "_blank");
-    }
     
     setFormData({ 
       name: "", 
