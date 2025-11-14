@@ -10,6 +10,7 @@ import masterExecu from "@/assets/master-executivo-ar-frigo.jpg";
 import masterAR from "@/assets/master-ar.jpg";  
 import masterexe from "@/assets/master-executivo.jpg";  
 import standartventi from "@/assets/Standart_ventilador.jpg";  
+import standartexecutivo from "@/assets/master-ar.jpg";  
 
 const accommodations = [
   {
@@ -102,7 +103,7 @@ const accommodations = [
       individual: 180, // (Ex: O preço base é para casal)
       duplo: 230.00,
     },
-    features: [ "Com acessibilidade", "Ar-condicionado", "Tv a cabo"],
+    features: [ "Com acessibilidade", "Ar-condicionado", "Tv a cabo", "Frigobar"],
   },
 
    {
@@ -113,9 +114,22 @@ const accommodations = [
     beds: "1 cama de casal",
     price: {
       individual: 140, // (Ex: O preço base é para casal)
-      duplo: 190.00,
+      duplo: 190,
     },
-    features: [ "Com acessibilidade", "Ventilador", "Tv a cabo"],
+    features: [ "Ventilador", "Tv a cabo"],
+  },
+
+  {
+    id: 9,
+    name: "Standart executivo com ventilador e frigobar",
+    image: standartexecutivo,
+    guests: "2 pessoas",
+    beds: "1 cama de casal",
+    price: {
+      individual: 160, // (Ex: O preço base é para casal)
+      duplo: 210,
+    },
+    features: [ "Ventilador", "Tv a cabo", "Frigobar"],
   },
 ];
 

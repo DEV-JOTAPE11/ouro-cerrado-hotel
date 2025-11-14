@@ -248,6 +248,9 @@ const Contact = () => {
                    <option value="Standart com Ventilador de teto" translate="no" className="notranslate">
                     Standart com Ventilador de teto
                   </option>
+                  <option value="Standart com Ventilador de teto" translate="no" className="notranslate">
+                    Standart Executivo com Ventilador e frigobar
+                  </option>
                 </select>
               </div>
 
