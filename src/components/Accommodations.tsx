@@ -9,6 +9,7 @@ import masterTriplo from "@/assets/master-triplo.jpg";
 import masterExecu from "@/assets/master-executivo-ar-frigo.jpg";
 import masterAR from "@/assets/master-ar.jpg";  
 import masterexe from "@/assets/master-executivo.jpg";  
+import standartventi from "@/assets/Standart_ventilador.jpg";  
 
 const accommodations = [
   {
@@ -98,10 +99,23 @@ const accommodations = [
     guests: "2 pessoas",
     beds: "1 cama de casal",
     price: {
-      individual: 160, // (Ex: O preço base é para casal)
-      duplo: 210.00,
+      individual: 180, // (Ex: O preço base é para casal)
+      duplo: 230.00,
     },
     features: [ "Com acessibilidade", "Ar-condicionado", "Tv a cabo"],
+  },
+
+   {
+    id: 8,
+    name: "Standart com ventilador",
+    image: standartventi,
+    guests: "2 pessoas",
+    beds: "1 cama de casal",
+    price: {
+      individual: 140, // (Ex: O preço base é para casal)
+      duplo: 190.00,
+    },
+    features: [ "Com acessibilidade", "Ventilador", "Tv a cabo"],
   },
 ];
 

@@ -104,7 +104,7 @@ const Contact = () => {
 
               <div>
                <Input
-                  placeholder="Seu Endereço (opcional)"
+                  placeholder="Seu Endereço"
                   value={formData.address}
                   onChange={(e) => setFormData({ ...formData,         address: e.target.value })}
                  className="h-12"
@@ -282,7 +282,7 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold text-lg mb-1">Horário de Check-in</h3>
                   <p className="text-muted-foreground">
-                    Check-in: 14h00<br />
+                    Check-in: 13h00<br />
                     Check-out: 12h00
                   </p>
                 </div>
