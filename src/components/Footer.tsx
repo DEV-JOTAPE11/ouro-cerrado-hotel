@@ -20,7 +20,7 @@ const Footer = () => {
     'w-auto' = largura automática para manter a proporção
   */}
             <p className="text-background/80">
-              Sua estadia inesquecível em Arinos-MG. Conforto, elegância e hospitalidade.
+              Sua estadia inesquecível em Buritis-MG. Conforto, elegância e hospitalidade.
             </p>
             <div className="flex gap-4">
               <a
