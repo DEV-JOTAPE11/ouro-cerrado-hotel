@@ -229,23 +229,23 @@ const Contact = () => {
                     Selecione o tipo de quarto
                   </option>
                   {/* Você deve listar os quartos que você criou no array accommodations */}
-                  <option value="Suíte Super Luxo">Suíte Super Luxo</option>
-                  <option value="Suite família com ar">
+                  <option value="Suíte Super Luxo" translate="no" className="notranslate">Suíte Super Luxo</option>
+                  <option value="Suite família com ar" translate="no" className="notranslate">
                     Suite família com ar
                   </option>
-                  <option value="Luxo executivo com ar e frigobar">
+                  <option value="Luxo executivo com ar e frigobar" translate="no" className="notranslate">
                     Luxo executivo com ar e frigobar
                   </option>
-                  <option value="Master triplo com ar">
+                  <option value="Master triplo com ar" translate="no" className="notranslate">
                     Master triplo com ar
                   </option>
-                  <option value="Master triplo com ar">
+                  <option value="Master triplo com ar" translate="no" className="notranslate">
                     Master Executivo com ar e frigobar
                   </option>
 
-                  <option value="Master com ar">Master com ar</option>
-                  <option value="Master executivo">Master executivo</option>
-                   <option value="Standart com Ventilador de teto">
+                  <option value="Master com ar" translate="no" className="notranslate">Master com ar</option>
+                  <option value="Master executivo" translate="no" className="notranslate">Master executivo</option>
+                   <option value="Standart com Ventilador de teto" translate="no" className="notranslate">
                     Standart com Ventilador de teto
                   </option>
                 </select>

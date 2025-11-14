@@ -169,7 +169,7 @@ const Accommodations = () => {
               </div>
 
               <CardContent className="p-6 space-y-4">
-                <h3 className="text-2xl font-bold">{room.name}</h3>
+                <h3 className="text-2xl font-bold notranslate" translate="no">{room.name}</h3>
 
                 {/* Info Icons */}
                 <div className="flex items-center gap-6 text-sm text-muted-foreground">
