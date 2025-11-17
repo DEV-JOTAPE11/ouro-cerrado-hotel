@@ -30,6 +30,7 @@ const Contact = () => {
     Nome: ${formData.name}
     Email: ${formData.email}
     Telefone: ${formData.phone}
+    CPF: ${formData.cpf || "Não informado"}
     CEP: ${formData.cep || "Não informado"}
     Rua: ${formData.rua || "Não informado"}
     Número: ${formData.numero || "Não informado"}
